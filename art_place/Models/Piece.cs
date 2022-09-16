@@ -9,5 +9,11 @@ namespace art_place.Models
     public bool ForSale { get; set; }
     public string CreatorId { get; set; }
     public Account Creator { get; set; }
+    // public int CollectionPieceId { get; set; }
+  }
+
+  public class CollectionPieceViewModel : Piece
+  {
+    public int CollectionPieceId { get; set; }
   }
 }

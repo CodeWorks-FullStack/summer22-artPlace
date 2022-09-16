@@ -35,6 +35,16 @@ namespace art_place.Repositories
       return pieces;
     }
 
+    internal CollectionPieceViewModel GetViewModelById(int id)
+    {
+      string sql = @"
+      SELECT * FROM pieces
+      WHERE id = @id;
+      ";
+      CollectionPieceViewModel piece = _db.Query<CollectionPieceViewModel>(sql, new { id }).FirstOrDefault();
+      return piece;
+    }
+
     internal Piece Create(Piece newPiece)
     {
       string sql = @"

@@ -37,7 +37,11 @@ namespace art_place
       services.AddScoped<AccountService>();
       // NOTE register Mangy transients
       services.AddTransient<PiecesRepository>();
+      services.AddTransient<CollectionsRepository>();
+      services.AddTransient<CollectionPiecesRepository>();
       services.AddTransient<PiecesService>();
+      services.AddTransient<CollectionsService>();
+      services.AddTransient<CollectionPiecesService>();
     }
 
     private void ConfigureCors(IServiceCollection services)
@@ -46,14 +50,14 @@ namespace art_place
       {
         options.AddPolicy("CorsDevPolicy", builder =>
               {
-            builder
-                  .AllowAnyMethod()
-                  .AllowAnyHeader()
-                  .AllowCredentials()
-                  .WithOrigins(new string[]{
+                builder
+                      .AllowAnyMethod()
+                      .AllowAnyHeader()
+                      .AllowCredentials()
+                      .WithOrigins(new string[]{
                         "http://localhost:8080", "http://localhost:8081"
+                  });
               });
-          });
       });
     }
 

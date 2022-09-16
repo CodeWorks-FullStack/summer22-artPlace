@@ -31,7 +31,7 @@ namespace art_place.Controllers
       catch (Exception e)
       {
 
-        return BadRequest(e);
+        return BadRequest(e.Message);
       }
     }
 
@@ -52,7 +52,7 @@ namespace art_place.Controllers
       catch (Exception e)
       {
 
-        return BadRequest(e);
+        return BadRequest(e.Message);
       }
     }
   }
