@@ -63,6 +63,10 @@ INSERT INTO collectionpieces
 (pieceId, collectionId)
 VALUES
 (4,2);
+-- Just selecting
+SELECT p.title, p.description, p.imgUrl, cp.id FROM collectionpieces cp
+JOIN pieces p ON p.id = cp.pieceId
+WHERE cp.collectionId = 1;
 
 -- join both tables together
 SELECT 

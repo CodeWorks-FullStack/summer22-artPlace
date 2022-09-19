@@ -1,13 +1,17 @@
-using System;
-using System.Collections.Generic;
-
 namespace art_place.Models
 {
-    public class Account
-    {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Picture { get; set; }
-    }
+  public class Profile : RepoItem<string>
+  {
+    public string Name { get; set; }
+    public string Picture { get; set; }
+  }
+
+  public class Account : Profile
+  {
+    public string Email { get; set; }
+    // NOTE potential things you want to keep private from general users
+    // public string Phone { get; set; }
+    // public string Address { get; set; }
+
+  }
 }
